@@ -14,7 +14,13 @@
 			<ul id="task01">
 				<?php
 					foreach ($todos as $key => $todo) {
-						echo "<li id ='". $key . "'>". $todo['task'] ."</li>";
+						// echo "<li id ='". $key . "'>". $todo["task"] ."</li>";
+						if($todo['done']==false){
+							echo "<li id ='". $key . "'><span><i class='fas fa-trash'></i></span>  ". $todo["task"] ."</li>";
+						}
+						else {
+							echo "<li id ='". $key . "' class='completed'><span><i class='fas fa-trash'></i></span>  ". $todo["task"] ."</li>";
+						}
 					}
 
 				?>
